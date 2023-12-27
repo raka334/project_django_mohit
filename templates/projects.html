@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .home {
+            display: flex;
+            padding: 10px;
+            margin: 10px;
+            position: fixed;
+            top: 10px; /* Adjust this value to set the distance from the top */
+            right: 10px; /* Adjust this value to set the distance from the right */
+            padding: 10px;
+        }
+        
+        .centered-button {
+            display: block;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="home">
+        <a class="centered-button" href="/"><button>Show PortFolio</button></a>
+    </div>
+    <div class="container">
+        <h1> Project Details </h1>
+
+        <form action="projects" method="post">
+            {% csrf_token %}
+            
+
+            <div class="form-grid">
+                
+                <div>
+                    <label for="name">Project Name:</label>
+                    <input type="text" name="projectname" >
+                </div>
+                
+                <div>
+                    <label for="image">Image:</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                </div>
+                
+                <div>
+                    <label for="htmlid">HTML ID:</label>
+                    <input type="text" name="htmlid" >
+                </div>
+                
+                <div>
+                    <label for="href">Href:</label>
+                    <input type="text" name="href" >
+                </div>
+                
+                <div>
+                    <label for="category">Category:</label>
+                    <input type="text" name="category" >
+                </div>
+
+                <div>
+                    <label for="link">Link:</label>
+                    <input type="url" name="link" >
+                </div>
+
+                <div>
+                    <label for="description">Project Description:</label>
+                    <textarea name="description" rows="4" ></textarea>
+                    
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Save & Add more</button>
+        </form>
+    </div>
+</body>
+</html>
