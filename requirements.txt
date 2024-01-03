@@ -3,3 +3,5 @@ Pillow
 psycopg2
 python-decouple
 python-dotenv
+whitenoise[brotli]
+gunicorn
