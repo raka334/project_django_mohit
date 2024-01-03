@@ -91,6 +91,8 @@ DATABASES = {
         'PASSWORD' : config("DATABASE_PASSWORD",default=''),
         'HOST' : config('DATABASE_HOST',default =""),
         'PORT': config('DATABASE_PORT',default =""),
+        'OPTIONS': {'sslmode': 'require'},
+        'DISABLE_SERVER_SIDE_CURSORS': True,
         # 'NAME': BASE_DIR / 'db.sqlite3',
 
     }
